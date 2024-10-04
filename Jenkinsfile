@@ -18,7 +18,8 @@ pipeline {
                 source /home/stallam/miniconda3/etc/profile.d/conda.sh
                 
                 #TODO fill out the path to conda here
-                conda activate mlip_py310
+                conda activate miniconda/envs/mlip_py310/
+                conda list
 
                 #TODO Complete the command to run pytest
                 pytest
