@@ -13,16 +13,14 @@ pipeline {
         stage('Test') {
             steps {
                 sh '''#!/bin/bash
+                set -e  # Stop on any error
                 echo 'Test Step: We run testing tool like pytest here'
 
-                source /home/stallam/miniconda3/etc/profile.d/conda.sh
-                
                 #TODO fill out the path to conda here
-                conda activate miniconda/envs/mlip_py310/
-                conda list
+                source /home/stallam/miniconda3/bin/activate mlip
 
                 #TODO Complete the command to run pytest
-                pytest
+                pytest --maxfail=1 --disable-warnings
 
                 echo 'pytest completed successfully'
                 '''
