@@ -16,7 +16,7 @@ pipeline {
                 echo 'Test Step: We run testing tool like pytest here'
 
                 #TODO fill out the path to conda here
-                source /home/stallam/miniconda3/bin/activate mlip
+                conda activate mlip_py310
 
                 #TODO Complete the command to run pytest
                 pytest
